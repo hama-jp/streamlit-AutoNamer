@@ -23,7 +23,6 @@ st.title("AutoNamer")
 st.header('変数名や関数名を自動で命名するアプリです')
 selected_language = st.selectbox("言語を選択してください", language_list)
 text_input = st.text_input("変数や関数にする処理の概要を記述してください", "")
-openai.api_key = st.text_input("ChatGPT API Keyを記載してください。","")
 if st.button("生成"):
     names = generate_name(text_input, language=selected_language)
     for name in names.split(","):
